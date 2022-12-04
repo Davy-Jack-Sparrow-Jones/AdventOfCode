@@ -1,4 +1,6 @@
-﻿PartOne();
+﻿// https://adventofcode.com/2022/day/2
+
+PartOne();
 PartTwo();
 
 static void PartOne()
