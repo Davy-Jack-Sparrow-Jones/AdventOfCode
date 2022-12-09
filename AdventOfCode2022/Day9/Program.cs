@@ -17,7 +17,6 @@ void PartTwo()
 
 static int Solve(StreamReader sr, int ropeSize)
 {
-    int tailMoves = 0;
     List<Position> visitedTailPositions = new();
 
     Position[] rope = new Position[ropeSize];
@@ -45,15 +44,12 @@ static int Solve(StreamReader sr, int ropeSize)
             }
 
             // Check if tail already visited this position
-            if (!visitedTailPositions.Any(t => t.X == tail.X && t.Y == tail.Y))
-            {
+            if (!visitedTailPositions.Any(t => t.X == tail.X && t.Y == tail.Y)) 
                 visitedTailPositions.Add(new Position(tail.X, tail.Y));
-                tailMoves++;
-            }
         }
     }
 
-    return tailMoves;
+    return visitedTailPositions.Count;
 }
 
 static void MoveTail(Position head, ref Position tail)
